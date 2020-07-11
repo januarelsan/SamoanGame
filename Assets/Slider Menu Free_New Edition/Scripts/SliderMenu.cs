@@ -220,7 +220,12 @@ public class SliderMenu : MonoBehaviour {
 	private 	bool 							ButtonClicked				= false;
 	//=======================================End Other Properties=========================================
 
-	void Start(){		
+	void Start(){	
+		SetSlides();	
+	}
+
+	public void SetSlides(){
+		Slides = FlashCardManager.Instance.GetCardList();
 	}
 
 	void Update () {
