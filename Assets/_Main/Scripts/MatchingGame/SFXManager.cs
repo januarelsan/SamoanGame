@@ -6,6 +6,8 @@ namespace MatchingGame
 {
 public class SFXManager : Singleton<SFXManager>
 {
+    [SerializeField]
+    private bool isShoweringConfetti;
 
     [SerializeField]
     private GameObject confettiShower = null;
@@ -24,7 +26,8 @@ public class SFXManager : Singleton<SFXManager>
     }
 
     public void ActiveConfettiShower(){
-        confettiShower.SetActive(true);
+        if(isShoweringConfetti)
+            confettiShower.SetActive(true);
     }
 }
     
