@@ -51,6 +51,7 @@ public class UIElementDragger : MonoBehaviour {
 
         if (dragging && objectToDrag.GetComponent<Tile>().GetCanDrag())
         {
+                                  
             objectToDrag.position = Input.mousePosition;
         }
 
