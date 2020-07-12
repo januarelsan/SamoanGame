@@ -71,12 +71,7 @@ public class AnimalSpawner : Singleton<AnimalSpawner> {
 		completedClockText.text = timeText.text;		
 
 		completePanel.transform.GetChild(0).GetChild(2).gameObject.SetActive(false);
-		completePanel.transform.GetChild(0).GetChild(3).gameObject.SetActive(true);
-
-
-		// if (TimeManager.Instance.GetTime() < GameData.Instance.TangkapHewan_HTime || GameData.Instance.TangkapHewan_HTime == 0) {						
-		// 	GameData.Instance.TangkapHewan_HTime = TimeManager.Instance.GetTime();
-		// }	
+		completePanel.transform.GetChild(0).GetChild(3).gameObject.SetActive(true);		
 		
 	}
 
@@ -99,8 +94,7 @@ public class AnimalSpawner : Singleton<AnimalSpawner> {
 	
 	// Update is called once per frame
 	void Update () {
-		// if(isPlaying)
-		// 	timeText.text = TimeManager.Instance.GetTimeString();	
+		
 	}
 
 	IEnumerator FirstSpawn(){
@@ -151,9 +145,7 @@ public class AnimalSpawner : Singleton<AnimalSpawner> {
 		failTotalStarText.text = GameData.Instance.TangkapHewan_TotalStars + "";
 		failClockText.text = timeText.text;		
 
-		failPanel.transform.GetChild(0).GetChild(2).gameObject.SetActive(true);
-
-		
+		failPanel.transform.GetChild(0).GetChild(2).gameObject.SetActive(true);		
 				
 	}
 
