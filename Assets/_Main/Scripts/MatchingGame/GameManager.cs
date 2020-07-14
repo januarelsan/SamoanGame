@@ -32,8 +32,8 @@ public class GameManager : Singleton<GameManager> {
 		
 		
 
-		gameType = GameData.Instance.GetGameType();
-		gameLevel = GameData.Instance.GetLevelNum();
+		gameType = 0 ;
+		gameLevel = 0 ;
 		
 
 		switch (gameType)
@@ -120,7 +120,7 @@ public class GameManager : Singleton<GameManager> {
 			openedTile[0] = tile;
 			openedTileNumbers[0] = tile.GetComponent<Tile>().GetNumber();
 
-			AudioShouter.Instance.ShoutClip(1);
+			
 			
 		} else if(openedTileNumbers[1] == -1){
 			openedTile[1] = tile;
@@ -128,7 +128,7 @@ public class GameManager : Singleton<GameManager> {
 			CheckTileNumbersMatched();
 		} else{
 
-			AudioShouter.Instance.ShoutClip(1);
+			
 
 			openedTile[0].GetComponent<Tile>().CloseTile();
 			openedTile[1].GetComponent<Tile>().CloseTile();
@@ -159,7 +159,7 @@ public class GameManager : Singleton<GameManager> {
 		openedTile[0].GetComponent<Tile>().SetMatched(true);
 		openedTile[1].GetComponent<Tile>().SetMatched(true);
 
-		AudioShouter.Instance.ShoutClip(2);
+		
 
 		matched++;
 		if(matched >= goals){
@@ -172,9 +172,9 @@ public class GameManager : Singleton<GameManager> {
 	void Finish(){
 
 		//Set Next Level Opened;
-		int level = GameData.Instance.GetLevelNum();
-		int type = GameData.Instance.GetGameType();
-		GameData.Instance.SetTypeLevelOpened(type,level+1,1);
+		// int level = GameData.Instance.GetLevelNum();
+		// int type = GameData.Instance.GetGameType();
+		// GameData.Instance.SetTypeLevelOpened(type,level+1,1);
 
 		// AdMobmanager.Instance.ShowInterstitial();
 
@@ -193,7 +193,7 @@ public class GameManager : Singleton<GameManager> {
 		openedTileNumbers[0] = -2;
 		openedTileNumbers[1] = -2;
 
-		AudioShouter.Instance.ShoutClip(3);
+		
 
 		return false;
 		

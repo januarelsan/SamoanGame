@@ -50,14 +50,14 @@ public class GUIManager : Singleton<GUIManager> {
 		{
 			yield return new WaitForSeconds(0.5f);
 			star.GetComponent<Animator>().SetTrigger("PopUp");
-			AudioShouter.Instance.ShoutClip(i);
+			
 			i++;
 		}
 
 		//Fanfare Win
-		AudioShouter.Instance.ShoutClip(8);
+		// AudioShouter.Instance.ShoutClip(8);
 		//Active ConfettiShower
-		SFXManager.Instance.ActiveConfettiShower();
+		// SFXManager.Instance.ActiveConfettiShower();
 
 	}
 

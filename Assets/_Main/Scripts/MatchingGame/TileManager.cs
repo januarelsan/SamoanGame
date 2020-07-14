@@ -120,7 +120,7 @@ public class TileManager : Singleton<TileManager> {
 		{
 			tile.GetComponent<Animator>().SetTrigger("PopUp");
 			yield return new WaitForSeconds(0.1f);
-			AudioShouter.Instance.ShoutClip(0);
+			
 		}
 
 		//After Popup is finished, let enable button

@@ -52,7 +52,7 @@ public class Tile : MonoBehaviour {
 
 	void CantToClick(){
 		GetComponent<Animator>().SetTrigger("Shake");
-		AudioShouter.Instance.ShoutClip(4);
+		
 	}
 
 	public void OpenTile(){

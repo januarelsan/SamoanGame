@@ -50,7 +50,7 @@ public class HomeManager : MonoBehaviour {
 		{
 			yield return new WaitForSeconds(0.1f);
 			lvlButton.GetComponent<Animator>().SetTrigger("PopUp");
-			AudioShouter.Instance.ShoutClip(0);
+			
 		}
 	}
 
