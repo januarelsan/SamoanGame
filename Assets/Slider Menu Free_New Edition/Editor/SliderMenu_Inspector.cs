@@ -151,6 +151,10 @@ public class SliderMenu_Inspector : Editor {
 			/*-----*/EditorGUILayout.EndHorizontal ();
 			//###################################################################################End Slides Object
 
+			
+
+			
+
 			EditorGUILayout.EndVertical();
 		}
 		EditorGUILayout.EndVertical();
