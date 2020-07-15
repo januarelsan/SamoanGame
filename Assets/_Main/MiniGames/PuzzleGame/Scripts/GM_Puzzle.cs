@@ -32,15 +32,17 @@ public class GM_Puzzle : Singleton<GM_Puzzle> {
 
 	private int nStars;
 
-	//Complete Panel
+	//Completed Panel
 	[SerializeField]
-	private GameObject completePanel;
+	private GameObject completedPanel;
+
+	//Finished Panel
 	[SerializeField]
-	private GameObject[] completedStars;
+	private GameObject finishedPanel;
 	[SerializeField]
-	private Text totalStarText;
+	private GameObject[] finishedStars;	
 	[SerializeField]
-	private Text completedClockText;
+	private Text finishedClockText;
 	
 	
 
@@ -48,7 +50,7 @@ public class GM_Puzzle : Singleton<GM_Puzzle> {
 	void Start () {
 
 		//Assign Index Array
-		for (int i = 0; i < 30; i++){
+		for (int i = 0; i < 2; i++){
 			indexArray[i] = i;
 		}
 	
@@ -64,14 +66,14 @@ public class GM_Puzzle : Singleton<GM_Puzzle> {
 	// Update is called once per frame
 	void Update () {
 
-		// if(isPlaying)
-		// 	timeText.text = TimeManager.Instance.GetTimeString();
+		if(isPlaying)
+			timeText.text = TimeManager.Instance.GetTimeString();
 	}
 
 	void RandomArrayOrder(){
 		for (int i = 0; i < 50; i++){
-			int r = Random.Range(0,30);
-			int r_ = Random.Range(0,30);
+			int r = Random.Range(0,2);
+			int r_ = Random.Range(0,2);
 			
 
 			int tempIndex = indexArray[r];
@@ -130,20 +132,9 @@ public class GM_Puzzle : Singleton<GM_Puzzle> {
 		index++;
 		indexText.text = (index + 1) + "/30";
 
-		if(index < 30){
-			isPlaying = false;		
-			GameData.Instance.Puzzle_TotalStars += GetCountedStars();
-			totalStarText.text = GameData.Instance.Puzzle_TotalStars + "";
-
-
-			for (int i = 0; i < GetCountedStars(); i++)
-			{
-				completedStars[i].SetActive(true);
-			}
-
-
-			// completedClockText.text = timeText.text;
-			completePanel.SetActive(true);	
+		if(index < 2){
+			isPlaying = false;											
+			completedPanel.SetActive(true);	
 
 		} else {
 			Finish();
@@ -151,43 +142,37 @@ public class GM_Puzzle : Singleton<GM_Puzzle> {
 	}
 
 	int GetCountedStars(){
-		// if (TimeManager.Instance.GetTime() < 15){
-		// 	nStars = 3;			
-		// } else if (TimeManager.Instance.GetTime() < 25){
-		// 	nStars = 2;
-		// } else {
-		// 	nStars = 1;
-		// }
+		if (TimeManager.Instance.GetTime() < 15){
+			nStars = 3;			
+		} else if (TimeManager.Instance.GetTime() < 25){
+			nStars = 2;
+		} else {
+			nStars = 1;
+		}
 
 		return nStars;
 	}
 
 	void Finish(){
-		Debug.Log("Finish");
+		
 
 		isPlaying = false;
-
-		GameData.Instance.Puzzle_TotalStars += GetCountedStars();
-		totalStarText.text = GameData.Instance.Puzzle_TotalStars + "";
-
+				
 
 		for (int i = 0; i < GetCountedStars(); i++)
 		{
-			completedStars[i].SetActive(true);
+			finishedStars[i].SetActive(true);
 		}
 
 
-		completedClockText.text = timeText.text;
-		completePanel.SetActive(true);	
-
-		completePanel.transform.GetChild(0).GetChild(2).gameObject.SetActive(false);
-		completePanel.transform.GetChild(0).GetChild(3).gameObject.SetActive(true);
+		finishedClockText.text = timeText.text;
+		finishedPanel.SetActive(true);					
 		
 	}
 
 	public void Reset(){
 
-		// TimeManager.Instance.ResetTime();
+		TimeManager.Instance.ResetTime();
 		isPlaying = true;
 
 		for (int i = 0; i < 6; i++){

@@ -14,7 +14,7 @@ public class GameManager : Singleton<GameManager> {
 	private int[] openedTileNumbers = {-1,-1};
 	private GameObject[] openedTile = new GameObject[2];
 
-	private bool gameIsPlaying = false;
+	private bool gameIsPlaying = true;
 
 	[SerializeField] private GameObject gameMusic = null;
 
@@ -29,9 +29,7 @@ public class GameManager : Singleton<GameManager> {
 
 	// Use this for initialization
 	void Start () {
-		
-		
-
+				
 		gameType = 0 ;
 		gameLevel = 0 ;
 		

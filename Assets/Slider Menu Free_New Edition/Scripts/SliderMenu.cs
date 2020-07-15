@@ -277,6 +277,11 @@ public class SliderMenu : MonoBehaviour {
 					if (HorizontalScrollbar.GetComponent<Scrollbar> ().value > (ScrollStep / 2) + (i - 1) * ScrollStep && HorizontalScrollbar.GetComponent<Scrollbar> ().value <= Mathf.Clamp ((ScrollStep / 2) + i * ScrollStep, 0, 1)) {
 						//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Begin Active Slide
 						if (j == i) {
+
+
+							// Slides [j].GetComponent<AudioSource>().Play();
+							Slides [j].GetComponent<Button>().interactable = true;
+
 							//------------------------------------------------------------------------Begin Position Animation
 							if (ActivePositionAnimation) {
 								Slides [j].GetComponent<RectTransform> ().localPosition = new Vector3 (
@@ -362,6 +367,9 @@ public class SliderMenu : MonoBehaviour {
 
 						//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Begin Previous Slides
 						else if(j < i){
+
+							Slides [j].GetComponent<Button>().interactable = false;
+
 							//---------------------------------------------------------------Begin Previous Position Animation
 							if (PreviousPositionAnimation) {
 								Slides [j].GetComponent<RectTransform> ().localPosition = new Vector3 (
@@ -426,6 +434,9 @@ public class SliderMenu : MonoBehaviour {
 
 						//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Begin Next Slides
 						else if(j > i){
+
+							Slides [j].GetComponent<Button>().interactable = false;
+
 							//-------------------------------------------------------------------Begin Next Position Animation
 							if (NextPositionAnimation) {
 								Slides [j].GetComponent<RectTransform> ().localPosition = new Vector3 (

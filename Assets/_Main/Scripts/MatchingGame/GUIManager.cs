@@ -9,7 +9,7 @@ public class GUIManager : Singleton<GUIManager> {
 
 
 	[SerializeField] private GameObject finishPanel = null;
-	[SerializeField] private GameObject finishBackground = null;
+	
 	[SerializeField] private GameObject gameOverPanel = null;
 	[SerializeField] private Text clockText = null;
 	[SerializeField] private Text finishClockText = null;
@@ -35,31 +35,12 @@ public class GUIManager : Singleton<GUIManager> {
 
 	public void ActiveFinishPanel(){
 		finishPanel.SetActive(true);
-		finishBackground.SetActive(true);
-		finishPanel.GetComponent<Animator>().SetTrigger("PopUp");
+				
 		finishClockText.text = clockText.text;
-
-		//Pop Up Stars
-		StartCoroutine("PopUpStars");
+		
 	}
 
-	IEnumerator PopUpStars(){
-		yield return new WaitForSeconds(0.5f);
-		int i = 5;
-		foreach (GameObject star in stars)
-		{
-			yield return new WaitForSeconds(0.5f);
-			star.GetComponent<Animator>().SetTrigger("PopUp");
-			
-			i++;
-		}
-
-		//Fanfare Win
-		// AudioShouter.Instance.ShoutClip(8);
-		//Active ConfettiShower
-		// SFXManager.Instance.ActiveConfettiShower();
-
-	}
+	
 
 	public void UpdateClockText(){
 		clockText.text = TimeManager.Instance.GetTimeString();

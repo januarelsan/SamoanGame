@@ -63,11 +63,9 @@ public class AnimalSpawner : Singleton<AnimalSpawner> {
 		Debug.Log("Finish");
 
 		isPlaying = false;
-		
-		GameData.Instance.TangkapHewan_TotalStars +=3;
-
+				
 		completePanel.SetActive(true);
-		totalStarText.text = GameData.Instance.TangkapHewan_TotalStars + "";
+		
 		completedClockText.text = timeText.text;		
 
 		completePanel.transform.GetChild(0).GetChild(2).gameObject.SetActive(false);
@@ -141,8 +139,7 @@ public class AnimalSpawner : Singleton<AnimalSpawner> {
 		failPanel.SetActive(true);	
 
 		isPlaying = false;				
-		
-		failTotalStarText.text = GameData.Instance.TangkapHewan_TotalStars + "";
+				
 		failClockText.text = timeText.text;		
 
 		failPanel.transform.GetChild(0).GetChild(2).gameObject.SetActive(true);		
