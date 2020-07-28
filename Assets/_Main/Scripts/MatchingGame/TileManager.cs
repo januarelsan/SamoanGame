@@ -16,7 +16,7 @@ public class TileManager : Singleton<TileManager> {
 
 	private GameObject[] tiles;
 
-	private int[] arrNumbers = new int[98]; // your fruit sprites 
+	private int[] arrNumbers = new int[11]; // your fruit sprites 
 	private int[] arrTileNumbers;
 
 	// Use this for initialization

@@ -17,6 +17,9 @@ public class GameManager : Singleton<GameManager> {
 	private bool gameIsPlaying = true;
 
 	[SerializeField] private GameObject gameMusic = null;
+	[SerializeField] private AudioClip matchedClip;
+	[SerializeField] private AudioClip wrongClip;
+	
 
 	//GameType things
 	//15 //30 //55 //70 //1.55 //2.35 //3.10 //4 //4.50 //6.40
@@ -157,6 +160,7 @@ public class GameManager : Singleton<GameManager> {
 		openedTile[0].GetComponent<Tile>().SetMatched(true);
 		openedTile[1].GetComponent<Tile>().SetMatched(true);
 
+		GetComponent<AudioSource>().PlayOneShot(matchedClip);
 		
 
 		matched++;
@@ -168,13 +172,6 @@ public class GameManager : Singleton<GameManager> {
 	}
 
 	void Finish(){
-
-		//Set Next Level Opened;
-		// int level = GameData.Instance.GetLevelNum();
-		// int type = GameData.Instance.GetGameType();
-		// GameData.Instance.SetTypeLevelOpened(type,level+1,1);
-
-		// AdMobmanager.Instance.ShowInterstitial();
 
 		GUIManager.Instance.ActiveFinishPanel();
 
@@ -195,6 +192,10 @@ public class GameManager : Singleton<GameManager> {
 
 		return false;
 		
+	}
+
+	public void WrongAudio(){
+		GetComponent<AudioSource>().PlayOneShot(wrongClip);
 	}
 
 	public void SetGoals(int goals){

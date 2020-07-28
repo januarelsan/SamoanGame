@@ -22,7 +22,7 @@ public class GM_Puzzle : Singleton<GM_Puzzle> {
 	[SerializeField]
 	private GameObject[] sourceTiles;
 
-	private	int[] indexArray = new int[30];
+	private	int[] indexArray;
 	private int index;
 
 	private int tileCompleted;
@@ -43,14 +43,22 @@ public class GM_Puzzle : Singleton<GM_Puzzle> {
 	private GameObject[] finishedStars;	
 	[SerializeField]
 	private Text finishedClockText;
+
+	[SerializeField]
+	private Image fullAnimalImage;
+
+	[SerializeField]
+	private Text animalText;
 	
 	
 
 	// Use this for initialization
 	void Start () {
 
+		indexArray = new int[animalSprites.Length];
+
 		//Assign Index Array
-		for (int i = 0; i < 2; i++){
+		for (int i = 0; i < indexArray.Length; i++){
 			indexArray[i] = i;
 		}
 	
@@ -72,8 +80,8 @@ public class GM_Puzzle : Singleton<GM_Puzzle> {
 
 	void RandomArrayOrder(){
 		for (int i = 0; i < 50; i++){
-			int r = Random.Range(0,2);
-			int r_ = Random.Range(0,2);
+			int r = Random.Range(0,animalSprites.Length);
+			int r_ = Random.Range(0,animalSprites.Length);
 			
 
 			int tempIndex = indexArray[r];
@@ -93,6 +101,8 @@ public class GM_Puzzle : Singleton<GM_Puzzle> {
 		for (int i = 0; i < sourceTiles.Length; i++){			
 			targetTiles[i].transform.GetChild(0).GetComponent<Image>().sprite = animalMultipleSprites[(index_ * 6) + i];
 		}
+
+		animalText.text = animalSprites[indexArray[index]].name;
 	}
 
 	void SetSourceTile(){
@@ -129,10 +139,12 @@ public class GM_Puzzle : Singleton<GM_Puzzle> {
 
 	void CompletedIndex(){
 
+		fullAnimalImage.sprite = animalSprites[indexArray[index]];
+
 		index++;
 		indexText.text = (index + 1) + "/30";
 
-		if(index < 2){
+		if(index < indexArray.Length){
 			isPlaying = false;											
 			completedPanel.SetActive(true);	
 
