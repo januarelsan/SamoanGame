@@ -14,9 +14,11 @@ public class FlashCardManager : Singleton<FlashCardManager>
 
     // ========== Start Sprite Categories ==========  
     [Header("Sprites")]
+    [SerializeField] private Sprite[] alphabetSprites; //0
     [SerializeField] private Sprite[] animalSprites; //0
     [SerializeField] private Sprite[] bodySprites; //2
     [SerializeField] private Sprite[] colorSprites; //1
+    [SerializeField] private Sprite[] clothSprites; //1
     [SerializeField] private Sprite[] daySprites; //3
     [SerializeField] private Sprite[] emoticonSprites; //4
     [SerializeField] private Sprite[] familySprites; //5    
@@ -31,9 +33,11 @@ public class FlashCardManager : Singleton<FlashCardManager>
 
     // ========== Start Clip Categories ==========  
     [Header("Clips")]
+    [SerializeField] private AudioClip[] alphabetClips;
     [SerializeField] private AudioClip[] animalClips;
     [SerializeField] private AudioClip[] bodyClips;
     [SerializeField] private AudioClip[] colorClips;
+    [SerializeField] private AudioClip[] clothClips;
     [SerializeField] private AudioClip[] dayClips;
     [SerializeField] private AudioClip[] emoticonClips;
     [SerializeField] private AudioClip[] familyClips;
@@ -55,14 +59,17 @@ public class FlashCardManager : Singleton<FlashCardManager>
     // Start is called before the first frame update
     void Awake()
     {
-        selectedCategory = GameData.Instance.FlashCardCategory;
-        //Animals
-        categorySpriteList.Add(animalSprites);
-        categoryClipList.Add(animalClips);
 
-        //Bodys
-        categorySpriteList.Add(bodySprites);
-        categoryClipList.Add(bodyClips);
+        
+        selectedCategory = GameData.Instance.FlashCardCategory;
+
+        //Alphabets
+        categorySpriteList.Add(alphabetSprites);
+        categoryClipList.Add(alphabetClips);
+
+        //Number
+        categorySpriteList.Add(numberSprites);
+        categoryClipList.Add(numberClips);
 
         //Colors
         categorySpriteList.Add(colorSprites);
@@ -72,9 +79,25 @@ public class FlashCardManager : Singleton<FlashCardManager>
         categorySpriteList.Add(daySprites);
         categoryClipList.Add(dayClips);
 
+        //Month
+        categorySpriteList.Add(monthSprites);
+        categoryClipList.Add(monthClips);
+
+        //Animals
+        categorySpriteList.Add(animalSprites);
+        categoryClipList.Add(animalClips);
+
+        //Bodys
+        categorySpriteList.Add(bodySprites);
+        categoryClipList.Add(bodyClips);            
+
         //Emoticons
         categorySpriteList.Add(emoticonSprites);
         categoryClipList.Add(emoticonClips);
+
+        //Cloths
+        categorySpriteList.Add(clothSprites);
+        categoryClipList.Add(clothClips);
 
         //Families
         categorySpriteList.Add(familySprites);
@@ -82,15 +105,7 @@ public class FlashCardManager : Singleton<FlashCardManager>
 
         //Fruits
         categorySpriteList.Add(fruitSprites);
-        categoryClipList.Add(fruitClips);
-
-        //Month
-        categorySpriteList.Add(monthSprites);
-        categoryClipList.Add(monthClips);
-
-        //Number
-        categorySpriteList.Add(numberSprites);
-        categoryClipList.Add(numberClips);
+        categoryClipList.Add(fruitClips);                
 
         //Object
         categorySpriteList.Add(objectSprites);
