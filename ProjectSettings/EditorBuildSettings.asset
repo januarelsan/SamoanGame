@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Main/Scenes/PuzzleGame.unity
     guid: 5ca0b2a6543e55b4fafe7d89287d2d3a
+  - enabled: 1
+    path: Assets/_Main/Scenes/CatchGame.unity
+    guid: 4a7b1010ab5847d42bebc161e0c20413
   m_configObjects: {}
