@@ -14,4 +14,14 @@ public class MainMusic : MonoBehaviour
             DestroyObject(gameObject);
         }
     }
+
+    void Update(){
+        if(SceneController.Instance.getSceneLoaded() == "YoutubePlayer"){
+            if(GetComponent<AudioSource>().isPlaying)
+                GetComponent<AudioSource>().Pause();
+        } else {
+            if(!GetComponent<AudioSource>().isPlaying)
+                GetComponent<AudioSource>().Play();
+        }
+    }
 }
