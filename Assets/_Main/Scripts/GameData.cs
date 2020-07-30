@@ -26,6 +26,12 @@ public class GameData : Singleton<GameData> {
 		set { PlayerPrefs.SetInt("FlashCardCategory",value);}
 	}
 
+	public string YoutubeVideoId
+	{
+		get { return PlayerPrefs.GetString("YoutubeVideoId");}
+		set { PlayerPrefs.SetString("YoutubeVideoId",value);}
+	}
+
 	
 	
 	
