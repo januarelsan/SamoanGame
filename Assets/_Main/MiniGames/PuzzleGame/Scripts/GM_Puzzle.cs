@@ -40,6 +40,8 @@ public class GM_Puzzle : Singleton<GM_Puzzle> {
 	[SerializeField]
 	private GameObject finishedPanel;
 	[SerializeField]
+	private GameObject canvasCharacter;
+	[SerializeField]
 	private GameObject[] finishedStars;	
 	[SerializeField]
 	private Text finishedClockText;
@@ -179,6 +181,7 @@ public class GM_Puzzle : Singleton<GM_Puzzle> {
 
 		finishedClockText.text = timeText.text;
 		finishedPanel.SetActive(true);					
+		canvasCharacter.SetActive(true);				
 		
 	}
 

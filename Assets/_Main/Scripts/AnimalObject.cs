@@ -20,7 +20,7 @@ public class AnimalObject : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		movingSpeed = Random.Range(2,3f);
+		movingSpeed = Random.Range(3,5f);
 	}
 	
 	// Update is called once per frame
