@@ -9,6 +9,7 @@ public class GUIManager : Singleton<GUIManager> {
 
 
 	[SerializeField] private GameObject finishPanel = null;
+	[SerializeField] private GameObject canvasCharacter = null;
 	
 	[SerializeField] private GameObject gameOverPanel = null;
 	[SerializeField] private Text clockText = null;
@@ -35,7 +36,7 @@ public class GUIManager : Singleton<GUIManager> {
 
 	public void ActiveFinishPanel(){
 		finishPanel.SetActive(true);
-				
+		canvasCharacter.SetActive(true);				
 		finishClockText.text = clockText.text;
 		
 	}

@@ -35,6 +35,9 @@ public class GM_CatchGame : Singleton<GM_CatchGame>
 	//Complete Panel
 	[SerializeField]
 	private GameObject completePanel;
+
+	[SerializeField]
+	private GameObject canvasCharacter;
 	
 	[SerializeField]
 	private Text totalStarText;
@@ -67,10 +70,11 @@ public class GM_CatchGame : Singleton<GM_CatchGame>
 		
 
 		completePanel.SetActive(true);
+		canvasCharacter.SetActive(true);
 		
 		completedClockText.text = timeText.text;		
 
-		completePanel.transform.GetChild(0).GetChild(2).gameObject.SetActive(false);
+		// completePanel.transform.GetChild(0).GetChild(2).gameObject.SetActive(false);
 		completePanel.transform.GetChild(0).GetChild(3).gameObject.SetActive(true);
 
 
