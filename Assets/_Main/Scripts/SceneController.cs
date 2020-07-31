@@ -16,7 +16,15 @@ public class SceneController : Singleton<SceneController> {
 	}
 
 	public void goToScene(string sceneName){
+		ShowAdsManager.Instance.DestroyAllAds();
 		SceneManager.LoadScene (sceneName);
+
+	}
+
+	
+	public void goToFlashCard(int category){
+		GameData.Instance.FlashCardCategory = category;
+		SceneManager.LoadScene ("FlashCard");
 	}
 
 	public void quitGame(){		
