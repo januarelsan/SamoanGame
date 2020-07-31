@@ -16,7 +16,9 @@ public class SceneController : Singleton<SceneController> {
 	}
 
 	public void goToScene(string sceneName){
+		ShowAdsManager.Instance.DestroyAllAds();
 		SceneManager.LoadScene (sceneName);
+
 	}
 
 	

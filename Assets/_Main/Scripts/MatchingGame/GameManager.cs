@@ -32,6 +32,8 @@ public class GameManager : Singleton<GameManager> {
 
 	// Use this for initialization
 	void Start () {
+
+		ShowAdsManager.Instance.RequestAndLoadInterstitialAd();
 				
 		gameType = 0 ;
 		gameLevel = 0 ;
@@ -178,7 +180,7 @@ public class GameManager : Singleton<GameManager> {
 		//Disable Game Music
 		gameMusic.GetComponent<AudioSource>().volume = 0.05f;
 
-		
+		ShowAdsManager.Instance.ShowInterstitialAd();
 
 		gameIsPlaying = false;
 	}

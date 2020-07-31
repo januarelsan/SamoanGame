@@ -59,6 +59,8 @@ public class GM_CatchGame : Singleton<GM_CatchGame>
 
 		Spawning();
 
+		ShowAdsManager.Instance.RequestAndLoadInterstitialAd();
+
 		
 	}
 
@@ -78,7 +80,7 @@ public class GM_CatchGame : Singleton<GM_CatchGame>
 		completePanel.transform.GetChild(0).GetChild(3).gameObject.SetActive(true);
 
 
-		
+		ShowAdsManager.Instance.ShowInterstitialAd();
 			
 		
 		

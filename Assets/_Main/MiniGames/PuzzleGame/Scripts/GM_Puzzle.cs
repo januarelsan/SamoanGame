@@ -70,6 +70,7 @@ public class GM_Puzzle : Singleton<GM_Puzzle> {
 		SetSourceTile();
 		SetTargetTile();
 
+		ShowAdsManager.Instance.RequestAndLoadInterstitialAd();
 		
 	}
 	
@@ -181,7 +182,9 @@ public class GM_Puzzle : Singleton<GM_Puzzle> {
 
 		finishedClockText.text = timeText.text;
 		finishedPanel.SetActive(true);					
-		canvasCharacter.SetActive(true);				
+		canvasCharacter.SetActive(true);		
+
+		ShowAdsManager.Instance.ShowInterstitialAd();		
 		
 	}
 
