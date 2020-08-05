@@ -18,7 +18,11 @@ public class GameData : Singleton<GameData> {
 			PlayerPrefs.DeleteAll();
 	}
 
-	
+	public int MainMusicOn
+	{
+		get { return PlayerPrefs.GetInt("MainMusicOn",1);}
+		set { PlayerPrefs.SetInt("MainMusicOn",value);}
+	}
 
 	public int FlashCardCategory
 	{
