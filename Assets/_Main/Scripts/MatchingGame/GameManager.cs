@@ -20,6 +20,7 @@ public class GameManager : Singleton<GameManager> {
 	[SerializeField] private AudioClip matchedClip;
 	[SerializeField] private AudioClip wrongClip;
 	
+	[SerializeField] private AudioClip[] fruitClips = null;
 
 	//GameType things
 	//15 //30 //55 //70 //1.55 //2.35 //3.10 //4 //4.50 //6.40
@@ -148,13 +149,13 @@ public class GameManager : Singleton<GameManager> {
 	void CheckTileNumbersMatched(){
 		
 		if(openedTile[0].GetComponent<Tile>().GetNumber() == openedTile[1].GetComponent<Tile>().GetNumber()){
-			Matched();
+			Matched(openedTile[0].GetComponent<Tile>().GetNumber());
 		}else{
 			UnMatched();
 		}
 	}
 
-	bool Matched(){
+	bool Matched(int tileNumber){
 		Debug.Log("Matched");
 		openedTileNumbers[0] = -1;
 		openedTileNumbers[1] = -1;
@@ -162,6 +163,7 @@ public class GameManager : Singleton<GameManager> {
 		openedTile[0].GetComponent<Tile>().SetMatched(true);
 		openedTile[1].GetComponent<Tile>().SetMatched(true);
 
+		GameObject.Find("FruitAudioSource").GetComponent<AudioSource>().PlayOneShot(fruitClips[tileNumber]);
 		GetComponent<AudioSource>().PlayOneShot(matchedClip);
 		
 
