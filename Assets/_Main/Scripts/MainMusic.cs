@@ -16,6 +16,7 @@ public class MainMusic : MonoBehaviour
     }
 
     void Update(){
+        Debug.Log("Music is: " + GameData.Instance.MainMusicOn);
         if(SceneController.Instance.getSceneLoaded() == "YoutubePlayer"){
             if(GetComponent<AudioSource>().isPlaying)
                 GetComponent<AudioSource>().Pause();
@@ -33,11 +34,5 @@ public class MainMusic : MonoBehaviour
         }
     }
     
-    public void ToogleMusic(){
-        if(GameData.Instance.MainMusicOn == 1){
-            GameData.Instance.MainMusicOn = 0;
-        } else {
-            GameData.Instance.MainMusicOn = 1;
-        }
-    }
+    
 }

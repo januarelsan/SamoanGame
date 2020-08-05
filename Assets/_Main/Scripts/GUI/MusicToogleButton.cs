@@ -17,4 +17,12 @@ public class MusicToogleButton : MonoBehaviour
     {        
         GetComponent<Image>().sprite = musicSprites[GameData.Instance.MainMusicOn];                
     }
+
+    public void ToogleMusic(){
+        if(GameData.Instance.MainMusicOn == 1){
+            GameData.Instance.MainMusicOn = 0;
+        } else {
+            GameData.Instance.MainMusicOn = 1;
+        }
+    }
 }
