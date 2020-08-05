@@ -497,7 +497,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1bcfef41b465f2c4482674c33c4cccda, type: 3}
+  m_audioClip: {fileID: 8300000, guid: db267aee726d2664abacc45508e14138, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -663,7 +663,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1900f310236efbd41ab72611ac1e930e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1dcdf1ee8c762b848b45eedc30d330d3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -751,4 +751,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Wednesday
+  m_Text: Wife
