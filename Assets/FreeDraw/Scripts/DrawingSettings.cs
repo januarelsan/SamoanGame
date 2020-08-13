@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 namespace FreeDraw
@@ -8,6 +9,8 @@ namespace FreeDraw
     // Helper methods used to set drawing settings
     public class DrawingSettings : MonoBehaviour
     {
+        public Button[] colorButtons;
+        public AudioClip[] colorClips;
         public static bool isCursorOverUI = false;
         public float Transparency = 1f;
 
@@ -39,6 +42,15 @@ namespace FreeDraw
             Color c = Color.red;
             Color violet = new Color(126,47,144,225);
 
+            foreach (Button button in colorButtons)
+            {
+                button.interactable = true;
+            }
+
+            GetComponent<AudioSource>().PlayOneShot(colorClips[i]);
+
+            colorButtons[i].interactable = false;
+
             switch (i)
             {
                 case 0:
@@ -50,7 +62,7 @@ namespace FreeDraw
                     break;
 
                 case 2:
-                    c = Color.cyan;
+                    c = Color.yellow;
                     break;                    
                 case 3:
                     c = Color.gray;
