@@ -7,7 +7,7 @@ public class AnimalObject : MonoBehaviour {
 
 	private int index;
 
-	private float movingSpeed = 0.5f;
+	private float movingSpeed;
 	private int direction;
 
 	private Transform spawnerTransform;
@@ -20,7 +20,7 @@ public class AnimalObject : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		movingSpeed = Random.Range(3,5f);
+		movingSpeed = Random.Range(2f,3f);
 	}
 	
 	// Update is called once per frame
@@ -38,7 +38,8 @@ public class AnimalObject : MonoBehaviour {
 
 	void Catch(){
 		
-		GM_CatchGame.Instance.ShoutClip(clip);
+		GameObject.Find("CatchingAudioSource").GetComponent<AudioSource>().PlayOneShot(clip);
+		// GM_CatchGame.Instance.ShoutClip(clip);
 
 		GM_CatchGame.Instance.ShoutClip(animalClip);
 

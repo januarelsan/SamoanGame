@@ -1194,7 +1194,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 0027013ff29332341885485da7babb46, type: 3}
   - {fileID: 21300000, guid: 80982bbc0b73c8b438ee7eb693e5a0d8, type: 3}
   - {fileID: 21300000, guid: ebeba62dad3623c45a9b9031441ffc62, type: 3}
-  - {fileID: 21300000, guid: 0466cf2937e7083479c7cf02483fe29d, type: 3}
+  - {fileID: 21300000, guid: cf445670259c2f4448535b857c8fc268, type: 3}
   - {fileID: 21300000, guid: 5b0eabc50fda83d41b7586c37b7eb0dd, type: 3}
   - {fileID: 21300000, guid: e50bbf8f866f53c4985f19b23820df41, type: 3}
   - {fileID: 21300000, guid: e50bbf8f866f53c4985f19b23820df41, type: 3}
@@ -1295,7 +1295,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: c00473c0afbc3034aa580afb66b28137, type: 3}
   - {fileID: 21300000, guid: bb8556af3032a8446a41fb5a2a5515d4, type: 3}
   - {fileID: 21300000, guid: 30741e66b0f5cda46bc68c4222013dc7, type: 3}
-  - {fileID: 21300000, guid: 92afa5acdc4180d4c91b6f69b21392c2, type: 3}
+  - {fileID: 21300000, guid: 3ab1ff7c99a711841b1a6fb156953738, type: 3}
   - {fileID: 21300000, guid: 4c6fe76f0199e54478ddf00332824092, type: 3}
   - {fileID: 21300000, guid: 3dacb33e05993984c84e95fc6a62dba9, type: 3}
   - {fileID: 21300000, guid: 9e1b3341e7881ce4e92dc702b9ccb7b8, type: 3}
@@ -1328,7 +1328,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: bf26a6c88fdb0f0408c4ee4a71bd8de2, type: 3}
   - {fileID: 21300000, guid: bf26a6c88fdb0f0408c4ee4a71bd8de2, type: 3}
   weatherSprites:
-  - {fileID: 21300000, guid: 29e7cfde51dcddd448e6c3a5d5648cf7, type: 3}
+  - {fileID: 21300000, guid: 65fcb78ad0641fd4480b0d4022a65bf1, type: 3}
   - {fileID: 21300000, guid: 43d933d3b30c3ca4e8306054c1b8eccc, type: 3}
   - {fileID: 21300000, guid: 6447834518dd06346a42fae285e1140f, type: 3}
   - {fileID: 21300000, guid: b541bb9dc1f30f940a2ce021eb499d13, type: 3}

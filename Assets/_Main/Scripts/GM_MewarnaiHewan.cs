@@ -30,7 +30,7 @@ public class GM_MewarnaiHewan : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		SetButtonColors();
+		// SetButtonColors();
 
 		
 	}
@@ -61,19 +61,19 @@ public class GM_MewarnaiHewan : MonoBehaviour {
 			drawable.GetComponent<Drawable>().ResetCanvas();
 	}
 
-	void SetButtonColors(){	
+	// void SetButtonColors(){	
 
-		buttonObjects[0].transform.GetChild(0).GetComponent<Image>().color = Color.black;
-		buttonObjects[1].transform.GetChild(0).GetComponent<Image>().color = Color.blue;
-		buttonObjects[2].transform.GetChild(0).GetComponent<Image>().color = Color.cyan;
-		buttonObjects[3].transform.GetChild(0).GetComponent<Image>().color = Color.gray;
-		buttonObjects[4].transform.GetChild(0).GetComponent<Image>().color = Color.green;		
-		buttonObjects[5].transform.GetChild(0).GetComponent<Image>().color = Color.magenta;
-		buttonObjects[6].transform.GetChild(0).GetComponent<Image>().color = Color.red;
-		buttonObjects[7].transform.GetChild(0).GetComponent<Image>().color = Color.white;
+	// 	buttonObjects[0].transform.GetChild(0).GetComponent<Image>().color = Color.black;
+	// 	buttonObjects[1].transform.GetChild(0).GetComponent<Image>().color = Color.blue;
+	// 	buttonObjects[2].transform.GetChild(0).GetComponent<Image>().color = Color.cyan;
+	// 	buttonObjects[3].transform.GetChild(0).GetComponent<Image>().color = Color.gray;
+	// 	buttonObjects[4].transform.GetChild(0).GetComponent<Image>().color = Color.green;		
+	// 	buttonObjects[5].transform.GetChild(0).GetComponent<Image>().color = Color.magenta;
+	// 	buttonObjects[6].transform.GetChild(0).GetComponent<Image>().color = Color.red;
+	// 	buttonObjects[7].transform.GetChild(0).GetComponent<Image>().color = Color.white;
 		
 		
-	}
+	// }
 
 	public void ResetCanvas(){
 		//reset canvas

@@ -25,6 +25,8 @@ namespace YoutubePlayer
         private RectTransform rectTransform;
         private void Start()
         {
+
+            ShowAdsManager.Instance.RequestAndLoadInterstitialAd();
             rectTransform = GetComponent<RectTransform>();
             playbackProgress = GetComponent<Image>();
             
@@ -43,6 +45,8 @@ namespace YoutubePlayer
             {
                 playbackProgress.fillAmount =
                     (float) (videoPlayer.length > 0 ? videoPlayer.time / videoPlayer.length : 0);
+            } else {
+                ShowAdsManager.Instance.RequestAndLoadInterstitialAd();
             }
         }
 
