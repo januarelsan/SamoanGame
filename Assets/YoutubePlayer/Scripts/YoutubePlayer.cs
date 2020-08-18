@@ -84,57 +84,57 @@ namespace YoutubePlayer
             }
         }
 
-        /// <summary>
-        /// Download a youtube video to a destination folder
-        /// </summary>
-        /// <param name="destinationFolder">A folder to create the file in</param>
-        /// <param name="videoUrl">Youtube url (e.g. https://www.youtube.com/watch?v=VIDEO_ID)</param>
-        /// <param name="progress">An object implementing `IProgress` to get download progress, from 0 to 1</param>
-        /// <param name="cancellationToken">A CancellationToken used to cancel the current async task</param>
-        /// <returns>Returns the path to the file where the video was downloaded</returns>
-        /// <exception cref="NotSupportedException">When the youtube url doesn't contain any supported streams</exception>
-        public async Task<string> DownloadVideoAsync(string destinationFolder = null, string videoUrl = null,
-            IProgress<double> progress = null, CancellationToken cancellationToken = default)
-        {
-            try
-            {
-                videoUrl = videoUrl ?? youtubeUrl;
-                var videoId = GetVideoId(videoUrl);
-                var video = await youtubeClient.GetVideoAsync(videoId);
-                var streamInfoSet = await youtubeClient.GetVideoMediaStreamInfosAsync(videoId);
+        // /// <summary>
+        // /// Download a youtube video to a destination folder
+        // /// </summary>
+        // /// <param name="destinationFolder">A folder to create the file in</param>
+        // /// <param name="videoUrl">Youtube url (e.g. https://www.youtube.com/watch?v=VIDEO_ID)</param>
+        // /// <param name="progress">An object implementing `IProgress` to get download progress, from 0 to 1</param>
+        // /// <param name="cancellationToken">A CancellationToken used to cancel the current async task</param>
+        // /// <returns>Returns the path to the file where the video was downloaded</returns>
+        // /// <exception cref="NotSupportedException">When the youtube url doesn't contain any supported streams</exception>
+        // public async Task<string> DownloadVideoAsync(string destinationFolder = null, string videoUrl = null,
+        //     IProgress<double> progress = null, CancellationToken cancellationToken = default)
+        // {
+        //     try
+        //     {
+        //         videoUrl = videoUrl ?? youtubeUrl;
+        //         var videoId = GetVideoId(videoUrl);
+        //         var video = await youtubeClient.GetVideoAsync(videoId);
+        //         var streamInfoSet = await youtubeClient.GetVideoMediaStreamInfosAsync(videoId);
                 
-                cancellationToken.ThrowIfCancellationRequested();
-                var streamInfo = streamInfoSet.Muxed.WithHighestVideoQuality();
-                if (streamInfo == null)
-                    throw new NotSupportedException($"No supported streams in youtube video '{videoId}'");
+        //         cancellationToken.ThrowIfCancellationRequested();
+        //         var streamInfo = streamInfoSet.Muxed.WithHighestVideoQuality();
+        //         if (streamInfo == null)
+        //             throw new NotSupportedException($"No supported streams in youtube video '{videoId}'");
 
-                var fileExtension = streamInfo.Container.GetFileExtension();
-                var fileName = $"{video.Title}.{fileExtension}";
+        //         var fileExtension = streamInfo.Container.GetFileExtension();
+        //         var fileName = $"{video.Title}.{fileExtension}";
 
-                var invalidChars = Path.GetInvalidFileNameChars();
-                foreach (var invalidChar in invalidChars)
-                {
-                    fileName = fileName.Replace(invalidChar.ToString(), "_");
-                }
+        //         var invalidChars = Path.GetInvalidFileNameChars();
+        //         foreach (var invalidChar in invalidChars)
+        //         {
+        //             fileName = fileName.Replace(invalidChar.ToString(), "_");
+        //         }
 
-                var filePath = fileName;
-                if (!string.IsNullOrEmpty(destinationFolder))
-                {
-                    Directory.CreateDirectory(destinationFolder);
-                    filePath = Path.Combine(destinationFolder, fileName);
-                }
+        //         var filePath = fileName;
+        //         if (!string.IsNullOrEmpty(destinationFolder))
+        //         {
+        //             Directory.CreateDirectory(destinationFolder);
+        //             filePath = Path.Combine(destinationFolder, fileName);
+        //         }
 
-                using (var output = File.Create(filePath))
-                    await youtubeClient.DownloadMediaStreamAsync(streamInfo, output, progress, cancellationToken);
+        //         using (var output = File.Create(filePath))
+        //             await youtubeClient.DownloadMediaStreamAsync(streamInfo, output, progress, cancellationToken);
 
-                return filePath;
-            }
-            catch (Exception ex)
-            {
-                Debug.LogException(ex);
-                return null;
-            }
-        }
+        //         return filePath;
+        //     }
+        //     catch (Exception ex)
+        //     {
+        //         Debug.LogException(ex);
+        //         return null;
+        //     }
+        // }
 
         /// <summary>
         /// Download closed captions for a youtube video

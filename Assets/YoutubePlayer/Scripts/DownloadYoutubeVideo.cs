@@ -29,16 +29,16 @@ namespace YoutubePlayer
         {
             Debug.Log("Downloading, please wait...");
             
-            var videoDownloadTask = youtubePlayer.DownloadVideoAsync(Environment.GetFolderPath(destination), null, this);
-            var captionsDownloadTask = youtubePlayer.DownloadClosedCaptions();
+            // var videoDownloadTask = youtubePlayer.DownloadVideoAsync(Environment.GetFolderPath(destination), null, this);
+            // var captionsDownloadTask = youtubePlayer.DownloadClosedCaptions();
 
-            var filePath = await videoDownloadTask;
-            var captionTrack = await captionsDownloadTask;
+            // var filePath = await videoDownloadTask;
+            // var captionTrack = await captionsDownloadTask;
             
-            var srtPath = Path.ChangeExtension(filePath, ".srt");
-            File.WriteAllText(srtPath, captionTrack.ToSRT());
+            // var srtPath = Path.ChangeExtension(filePath, ".srt");
+            // File.WriteAllText(srtPath, captionTrack.ToSRT());
             
-            Debug.Log($"Video saved to {Path.GetFullPath(filePath)}");
+            // Debug.Log($"Video saved to {Path.GetFullPath(filePath)}");
         }
 
         public void Report(double value)
